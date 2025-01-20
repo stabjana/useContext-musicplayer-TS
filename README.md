@@ -12,6 +12,8 @@ In this app we want to create a useContext music player that is capable of playi
 Application steps:
 
 - [ ] - Create a useContext music player that is capable of playing a song. We will call this context MusicPlayerContext and put it in the context folder.
+- [ ] - We will create types that will be used to define the music player state and the music player hook.
+- [ ] - We will create a MusicPlayerContext.tsx file that will be used to provide the music player context to the application.
 - [ ] - We will provide access to the MusicPlayerContext in the App.tsx file so that the entire application can access the music player.
 - [ ] - Next we will create useMusicPlayer hook, in the hooks folder. This will be a custom hook that will be used to play, pause, stop and skip the song, either forwards or backwards.
 - [ ] - Use songs that are in the public folder as the source songs.
