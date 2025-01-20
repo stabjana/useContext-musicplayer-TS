@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# Tasks:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup:
 
-Currently, two official plugins are available:
+- [ ] - Add MUI, MUI Iconsand theme
+- [ ] - Create simple button to show theme and MUI are working.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Steps:
 
-## Expanding the ESLint configuration
+In this app we want to create a useContext music player that is capable of playing a song. We want to be able to play, pause and stop the song. We also want to involve a playlist that can be played. The playlist should be able to list all songs available. The starting song should be the first song in the playlist. We want to be able to skip track to the next song or go back to the previous song. If the end of the playlist is reached, the playlist should start over from the first song.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Application steps:
 
-- Configure the top-level `parserOptions` property like this:
+- [ ] - Create a useContext music player that is capable of playing a song. We will call this context MusicPlayerContext and put it in the context folder.
+- [ ] - We will provide access to the MusicPlayerContext in the App.tsx file so that the entire application can access the music player.
+- [ ] - Next we will create useMusicPlayer hook, in the hooks folder. This will be a custom hook that will be used to play, pause, stop and skip the song, either forwards or backwards.
+- [ ] - Use songs that are in the public folder as the source songs.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Components:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- [ ] - Create a Playlist component that will be used to display the playlist.
+- [ ] - Create a Player component that will be used to display the player.
+- [ ] - Create a Song component that will be used to display the song.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Pages:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [ ] - Create a Home page that will be used to display the home page.
+- [ ] - Create a Playlist page that will be used to display the playlist.
+- [ ] - Create a Player page that will be used to display the player.
+- [ ] - Create a Song page that will be used to display the song.
+
+## Improvements:
+
+- [ ] - Refactor the navigation to use MUI Navigation component.
+- [ ] - Add a search bar to the playlist page.
+- [ ] - Add a filter to the playlist page.
+- [ ] - Add more songs to the playlist.
