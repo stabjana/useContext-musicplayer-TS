@@ -1,23 +1,49 @@
+import {
+  Box,
+  Button,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Layout = () => {
+  // const theme = useTheme();
+  const { toggleColorMode } = useContext(ThemeContext);
+
   return (
     <div>
-      <nav style={{ padding: "1rem", backgroundColor: "#f0f0f0" }}>
-        <ul
-          style={{ display: "flex", gap: "1rem", listStyle: "none", margin: 0 }}
-        >
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/player">Player</Link>
-          </li>
-        </ul>
-      </nav>
-      <main style={{ padding: "1rem" }}>
-        <Outlet />
-      </main>
+      <Box>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Link to="/">Home</Link>
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Link to="/player">Player</Link>
+            </Typography>
+
+            <Button color="inherit" onClick={toggleColorMode}>
+              Toggle Theme
+            </Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      <Outlet />
     </div>
   );
 };

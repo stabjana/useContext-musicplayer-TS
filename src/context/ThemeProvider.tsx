@@ -1,7 +1,7 @@
-import { ThemeContext } from "@emotion/react";
-import { PaletteMode } from "@mui/material";
+import { ThemeContext } from "./ThemeContext";
+import { CssBaseline, PaletteMode } from "@mui/material";
 import { ReactNode, useMemo, useState } from "react";
-import {ThemeProvider as MUIThemeProvider} from "@mui/material/styles"
+import {ThemeProvider as MUIThemeProvider} from "@mui/material/styles";
 import { createAppTheme } from "../theme/theme";
 
 // we need interface to show what props its gonna Be
@@ -23,12 +23,14 @@ export const ThemeProvider = ({children}: Props) => { // announcing the children
     [mode]
   );
 
-  const theme = useMemo(() => createAppTheme(mode), [mode])
+  const theme = useMemo(() => createAppTheme(mode), [mode]);
 
   // we need to allow the theme to be changed
   return (
     <ThemeContext.Provider value={themeContext}>
-      <MUIThemeProvider theme={theme}>{children}</MUIThemeProvider> 
+      <MUIThemeProvider theme={theme}>{children}
+       {/*  <CssBaseline/> */}
+        </MUIThemeProvider> 
     </ThemeContext.Provider>
   );
 
