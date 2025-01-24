@@ -10,10 +10,12 @@ import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useMusicPlayer } from "../hooks/useMusicPlayer";
 
 const Layout = () => {
   // const theme = useTheme();
   const { toggleColorMode } = useContext(ThemeContext);
+  const music = useMusicPlayer();
 
   return (
     <div>
@@ -44,6 +46,7 @@ const Layout = () => {
         </AppBar>
       </Box>
       <Outlet />
+      <Typography variant= "h3">{music.currentTrackName}</Typography>
     </div>
   );
 };
