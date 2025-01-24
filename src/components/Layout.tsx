@@ -31,10 +31,10 @@ const Layout = () => {
             </IconButton>
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link to="/">Home</Link>
+              <Link color="inherit" to="/">Home</Link>
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link to="/player">Player</Link>
+              <Link color="inherit" to="/player">Player</Link>
             </Typography>
 
             <Button color="inherit" onClick={toggleColorMode}>
