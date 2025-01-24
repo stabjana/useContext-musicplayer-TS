@@ -55,7 +55,7 @@ export const useMusicPlayer = (): MusicPlayerHook => {
     currentTrackName:
       state.currentTrackIndex !== null
         ? state.tracks[state.currentTrackIndex].name
-        : undefined,
+        : null,
     trackList: state.tracks,
     isPlaying: state.isPlaying,
     playPreviousTrack,
